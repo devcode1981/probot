@@ -14,18 +14,18 @@ import { State } from "./types";
  * to wait for the magic to happen.
  *
  * ```js
- *  module.exports = ({ app }) => {
+ *  module.exports = (app) => {
  *    app.on('issues.opened', async context => {
- *      const github = await app.auth();
+ *      const octokit = await app.auth();
  *    });
  *  };
  * ```
  *
  * @param id - ID of the installation, which can be extracted from
  * `context.payload.installation.id`. If called without this parameter, the
- * client wil authenticate [as the app](https://developer.github.com/apps/building-integrations/setting-up-and-registering-github-apps/about-authentication-options-for-github-apps/#authenticating-as-a-github-app)
+ * client wil authenticate [as the app](https://docs.github.com/en/developers/apps/authenticating-with-github-apps#authenticating-as-a-github-app)
  * instead of as a specific installation, which means it can only be used for
- * [app APIs](https://developer.github.com/v3/apps/).
+ * [app APIs](https://docs.github.com/apps/).
  *
  * @returns An authenticated GitHub API client
  */
