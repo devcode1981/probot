@@ -45,7 +45,7 @@
     "@octokit/plugin-throttling": "^3.3.0",
     "@octokit/request": "^5.1.0",
     "@octokit/types": "^5.0.1",
-    "@octokit/webhooks": "^7.15.0",
+    "@octokit/webhooks": "^10.0.9",
     "@probot/get-private-key": "^1.0.0",
     "@probot/octokit-plugin-config": "^1.0.0",
     "@probot/pino": "^2.1.1",
