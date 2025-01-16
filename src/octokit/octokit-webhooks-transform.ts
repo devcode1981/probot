@@ -1,7 +1,7 @@
-import { WebhookEvent } from "@octokit/webhooks";
+import type { EmitterWebhookEvent as WebhookEvent } from "@octokit/webhooks";
 
-import { Context } from "../context";
-import { State } from "../types";
+import { Context } from "../context.js";
+import type { State } from "../types.js";
 
 /**
  * Probot's transform option, which extends the `event` object that is passed
@@ -10,9 +10,9 @@ import { State } from "../types";
  */
 export async function webhookTransform(state: State, event: WebhookEvent) {
   const log = state.log.child({ name: "event", id: event.id });
-  const github = (await state.octokit.auth({
+  const octokit = (await state.octokit.auth({
     type: "event-octokit",
     event,
   })) as typeof state.octokit;
-  return new Context(event, github, log);
+  return new Context(event, octokit, log);
 }
